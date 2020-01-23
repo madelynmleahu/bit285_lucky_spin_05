@@ -17,9 +17,11 @@ namespace LuckySpin.Controllers
          * TODO: Inject a RepoService object in the Constructor parameter
          *       Set the instance variable's initial value using the parameter 
          */
-        public SpinnerController()
+        private RepoService repository;
+        public SpinnerController(RepoService repository)
         {
             random = new Random(); // Notice "random" is not injected, just created here
+            this.repository = repository;
         }
 
         /***
@@ -66,6 +68,7 @@ namespace LuckySpin.Controllers
             ViewBag.FirstName = player.FirstName;
 
             //TODO: add the spin to the Spin Repository
+            repository.AddSpins(spin);
             return View(spin);
         }
 
