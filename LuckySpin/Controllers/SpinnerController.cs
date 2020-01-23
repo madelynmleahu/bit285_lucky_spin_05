@@ -78,7 +78,7 @@ namespace LuckySpin.Controllers
         [HttpGet]
         public IActionResult LuckList()
         {
-            return View();
+            return View(repository.SpinRepository);
         }
     }
 }
