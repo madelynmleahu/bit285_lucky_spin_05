@@ -15,9 +15,9 @@ namespace LuckySpin
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<LuckySpin.Models.TextTransformService>();
             services.AddMvc();
-            services.AddSingleton<LuckySpin.Models.RepoService>();
+            services.AddTransient<Models.TextTransformService>();
+            services.AddSingleton<Models.RepoService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
